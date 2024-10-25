@@ -1,0 +1,105 @@
+% Prolog language coded ferry departure times.
+% Now is minutes after midnight
+% Returns minutes to next departure
+
+ferryname(X) :- X = 'Kornhall'.
+
+next_ferry(_Day_of_week,Now,X) :- Now > 0, Now =< 0*60+35, X is 0*60+35 - Now.
+next_ferry(_Day_of_week,Now,X) :- Now > 0*60+35, Now =< 0*60+55, X is 0*60+55 - Now.
+next_ferry(_Day_of_week,Now,X) :- Now > 0*60+55, Now =< 1*60+55, X is 1*60+55 - Now. % Kallelse 10 min innan
+next_ferry(_Day_of_week,Now,X) :- Now > 1*60+55, Now =< 3*60+55, X is 3*60+55 - Now. % Kallelse 10 min innan
+next_ferry(_Day_of_week,Now,X) :- Now > 3*60+55, Now =< 4*60+25, X is 4*60+25 - Now. % Kallelse 10 min innan
+next_ferry(_Day_of_week,Now,X) :- Now > 4*60+25, Now =< 4*60+55, X is 4*60+55 - Now.
+next_ferry(Day_of_week,Now,X) :- is_weekend(Day_of_week), Now > 4*60+55, Now =< 5*60+25, X is 5*60+25 - Now.
+next_ferry(Day_of_week,Now,X) :- is_weekend(Day_of_week), Now > 5*60+25, Now =< 5*60+55, X is 5*60+55 - Now.
+next_ferry(Day_of_week,Now,X) :- is_weekend(Day_of_week), Now > 5*60+55, Now =< 6*60+25, X is 6*60+25 - Now.
+next_ferry(Day_of_week,Now,X) :- is_weekend(Day_of_week), Now > 6*60+25, Now =< 6*60+55, X is 6*60+55 - Now.
+next_ferry(Day_of_week,Now,X) :- is_weekend(Day_of_week), Now > 6*60+55, Now =< 7*60+25, X is 7*60+25 - Now.
+next_ferry(Day_of_week,Now,X) :- is_weekend(Day_of_week), Now > 7*60+25, Now =< 7*60+55, X is 7*60+55 - Now.
+next_ferry(Day_of_week,Now,X) :- is_weekend(Day_of_week), Now > 7*60+55, Now =< 8*60+25, X is 8*60+25 - Now.
+next_ferry(Day_of_week,Now,X) :- is_weekend(Day_of_week), Now > 8*60+25, Now =< 8*60+55, X is 8*60+55 - Now.
+next_ferry(Day_of_week,Now,X) :- is_weekend(Day_of_week), Now > 8*60+55, Now =< 9*60+15, X is 9*60+15 - Now.
+next_ferry(Day_of_week,Now,X) :- is_weekend(Day_of_week), Now > 9*60+15, Now =< 9*60+35, X is 9*60+35 - Now.
+next_ferry(Day_of_week,Now,X) :- is_weekend(Day_of_week), Now > 9*60+35, Now =< 9*60+55, X is 9*60+55 - Now.
+next_ferry(_Day_of_week,Now,X) :- Now > 4*60+55, Now =< 5*60+10, X is 5*60+10 - Now.
+next_ferry(_Day_of_week,Now,X) :- Now > 5*60+10, Now =< 5*60+25, X is 5*60+25 - Now.
+next_ferry(_Day_of_week,Now,X) :- Now > 5*60+25, Now =< 5*60+40, X is 5*60+40 - Now.
+next_ferry(_Day_of_week,Now,X) :- Now > 5*60+40, Now =< 5*60+55, X is 5*60+55 - Now.
+next_ferry(_Day_of_week,Now,X) :- Now > 5*60+55, Now =< 6*60+10, X is 6*60+10 - Now.
+next_ferry(_Day_of_week,Now,X) :- Now > 6*60+10, Now =< 6*60+25, X is 6*60+25 - Now.
+next_ferry(_Day_of_week,Now,X) :- Now > 6*60+25, Now =< 6*60+40, X is 6*60+40 - Now.
+next_ferry(_Day_of_week,Now,X) :- Now > 6*60+40, Now =< 6*60+55, X is 6*60+55 - Now.
+next_ferry(_Day_of_week,Now,X) :- Now > 6*60+55, Now =< 7*60+10, X is 7*60+10 - Now.
+next_ferry(_Day_of_week,Now,X) :- Now > 7*60+10, Now =< 7*60+25, X is 7*60+25 - Now.
+next_ferry(_Day_of_week,Now,X) :- Now > 7*60+25, Now =< 7*60+40, X is 7*60+40 - Now.
+next_ferry(_Day_of_week,Now,X) :- Now > 7*60+40, Now =< 7*60+55, X is 7*60+55 - Now.
+next_ferry(_Day_of_week,Now,X) :- Now > 7*60+55, Now =< 8*60+10, X is 8*60+10 - Now.
+next_ferry(_Day_of_week,Now,X) :- Now > 8*60+10, Now =< 8*60+25, X is 8*60+25 - Now.
+next_ferry(_Day_of_week,Now,X) :- Now > 8*60+25, Now =< 8*60+40, X is 8*60+40 - Now.
+next_ferry(_Day_of_week,Now,X) :- Now > 8*60+40, Now =< 8*60+55, X is 8*60+55 - Now.
+next_ferry(_Day_of_week,Now,X) :- Now > 8*60+55, Now =< 9*60+25, X is 9*60+25 - Now.
+next_ferry(_Day_of_week,Now,X) :- Now > 9*60+25, Now =< 9*60+40, X is 9*60+40 - Now.
+next_ferry(_Day_of_week,Now,X) :- Now > 9*60+40, Now =< 9*60+55, X is 9*60+55 - Now.
+next_ferry(_Day_of_week,Now,X) :- Now > 9*60+55, Now =< 10*60+15, X is 10*60+15 - Now.
+next_ferry(_Day_of_week,Now,X) :- Now > 10*60+15, Now =< 10*60+35, X is 10*60+35 - Now.
+next_ferry(_Day_of_week,Now,X) :- Now > 10*60+35, Now =< 10*60+55, X is 10*60+55 - Now.
+next_ferry(_Day_of_week,Now,X) :- Now > 10*60+55, Now =< 11*60+15, X is 11*60+15 - Now.
+next_ferry(_Day_of_week,Now,X) :- Now > 11*60+15, Now =< 11*60+35, X is 11*60+35 - Now.
+next_ferry(_Day_of_week,Now,X) :- Now > 11*60+35, Now =< 11*60+55, X is 11*60+55 - Now.
+next_ferry(_Day_of_week,Now,X) :- Now > 11*60+55, Now =< 12*60+15, X is 12*60+15 - Now.
+next_ferry(_Day_of_week,Now,X) :- Now > 12*60+15, Now =< 12*60+35, X is 12*60+35 - Now.
+next_ferry(_Day_of_week,Now,X) :- Now > 12*60+35, Now =< 12*60+55, X is 12*60+55 - Now.
+next_ferry(_Day_of_week,Now,X) :- Now > 12*60+55, Now =< 13*60+15, X is 13*60+15 - Now.
+next_ferry(_Day_of_week,Now,X) :- Now > 13*60+15, Now =< 13*60+35, X is 13*60+35 - Now.
+next_ferry(_Day_of_week,Now,X) :- Now > 13*60+35, Now =< 13*60+55, X is 13*60+55 - Now.
+next_ferry(Day_of_week,Now,X) :- is_weekend(Day_of_week), Now > 13*60+55, Now =< 14*60+15, X is 14*60+15 - Now.
+next_ferry(Day_of_week,Now,X) :- is_weekend(Day_of_week), Now > 14*60+15, Now =< 14*60+35, X is 14*60+35 - Now.
+next_ferry(Day_of_week,Now,X) :- is_weekend(Day_of_week), Now > 14*60+35, Now =< 14*60+55, X is 14*60+55 - Now.
+next_ferry(Day_of_week,Now,X) :- is_weekend(Day_of_week), Now > 14*60+55, Now =< 15*60+15, X is 15*60+15 - Now.
+next_ferry(Day_of_week,Now,X) :- is_weekend(Day_of_week), Now > 15*60+15, Now =< 15*60+35, X is 15*60+35 - Now.
+next_ferry(Day_of_week,Now,X) :- is_weekend(Day_of_week), Now > 15*60+35, Now =< 15*60+55, X is 15*60+55 - Now.
+next_ferry(Day_of_week,Now,X) :- is_weekend(Day_of_week), Now > 15*60+55, Now =< 16*60+15, X is 16*60+15 - Now.
+next_ferry(Day_of_week,Now,X) :- is_weekend(Day_of_week), Now > 16*60+15, Now =< 16*60+35, X is 16*60+35 - Now.
+next_ferry(Day_of_week,Now,X) :- is_weekend(Day_of_week), Now > 16*60+35, Now =< 16*60+55, X is 16*60+55 - Now.
+next_ferry(Day_of_week,Now,X) :- is_weekend(Day_of_week), Now > 16*60+55, Now =< 17*60+15, X is 17*60+15 - Now.
+next_ferry(Day_of_week,Now,X) :- is_weekend(Day_of_week), Now > 17*60+15, Now =< 17*60+35, X is 17*60+35 - Now.
+next_ferry(Day_of_week,Now,X) :- is_weekend(Day_of_week), Now > 17*60+35, Now =< 17*60+55, X is 17*60+55 - Now.
+next_ferry(Day_of_week,Now,X) :- is_weekend(Day_of_week), Now > 17*60+55, Now =< 18*60+15, X is 18*60+15 - Now.
+next_ferry(Day_of_week,Now,X) :- is_weekend(Day_of_week), Now > 18*60+15, Now =< 18*60+35, X is 18*60+35 - Now.
+next_ferry(Day_of_week,Now,X) :- is_weekend(Day_of_week), Now > 18*60+35, Now =< 18*60+55, X is 18*60+55 - Now.
+next_ferry(_Day_of_week,Now,X) :- Now > 13*60+55, Now =< 14*60+10, X is 14*60+10 - Now.
+next_ferry(_Day_of_week,Now,X) :- Now > 14*60+10, Now =< 14*60+20, X is 14*60+20 - Now.
+next_ferry(_Day_of_week,Now,X) :- Now > 14*60+20, Now =< 14*60+50, X is 14*60+50 - Now.
+next_ferry(_Day_of_week,Now,X) :- Now > 14*60+50, Now =< 15*60+10, X is 15*60+10 - Now.
+next_ferry(_Day_of_week,Now,X) :- Now > 15*60+10, Now =< 15*60+25, X is 15*60+25 - Now.
+next_ferry(_Day_of_week,Now,X) :- Now > 15*60+25, Now =< 15*60+40, X is 15*60+40 - Now.
+next_ferry(_Day_of_week,Now,X) :- Now > 15*60+40, Now =< 15*60+50, X is 15*60+50 - Now.
+next_ferry(_Day_of_week,Now,X) :- Now > 15*60+50, Now =< 16*60+10, X is 16*60+10 - Now.
+next_ferry(_Day_of_week,Now,X) :- Now > 16*60+10, Now =< 16*60+25, X is 16*60+25 - Now.
+next_ferry(_Day_of_week,Now,X) :- Now > 16*60+25, Now =< 16*60+40, X is 16*60+40 - Now.
+next_ferry(_Day_of_week,Now,X) :- Now > 16*60+40, Now =< 16*60+55, X is 16*60+55 - Now.
+next_ferry(_Day_of_week,Now,X) :- Now > 16*60+55, Now =< 17*60+10, X is 17*60+10 - Now.
+next_ferry(_Day_of_week,Now,X) :- Now > 17*60+10, Now =< 17*60+25, X is 17*60+25 - Now.
+next_ferry(_Day_of_week,Now,X) :- Now > 17*60+25, Now =< 17*60+40, X is 17*60+40 - Now.
+next_ferry(_Day_of_week,Now,X) :- Now > 17*60+40, Now =< 17*60+55, X is 17*60+55 - Now.
+next_ferry(_Day_of_week,Now,X) :- Now > 17*60+55, Now =< 18*60+10, X is 18*60+10 - Now.
+next_ferry(_Day_of_week,Now,X) :- Now > 18*60+10, Now =< 18*60+25, X is 18*60+25 - Now.
+next_ferry(_Day_of_week,Now,X) :- Now > 18*60+25, Now =< 18*60+40, X is 18*60+40 - Now.
+next_ferry(_Day_of_week,Now,X) :- Now > 18*60+40, Now =< 18*60+55, X is 18*60+55 - Now.
+next_ferry(_Day_of_week,Now,X) :- Now > 18*60+55, Now =< 19*60+15, X is 19*60+15 - Now.
+next_ferry(_Day_of_week,Now,X) :- Now > 19*60+15, Now =< 19*60+35, X is 19*60+35 - Now.
+next_ferry(_Day_of_week,Now,X) :- Now > 19*60+35, Now =< 19*60+55, X is 19*60+55 - Now.
+next_ferry(_Day_of_week,Now,X) :- Now > 19*60+55, Now =< 20*60+15, X is 20*60+15 - Now.
+next_ferry(_Day_of_week,Now,X) :- Now > 20*60+15, Now =< 20*60+35, X is 20*60+35 - Now.
+next_ferry(_Day_of_week,Now,X) :- Now > 20*60+35, Now =< 20*60+55, X is 20*60+55 - Now.
+next_ferry(_Day_of_week,Now,X) :- Now > 20*60+55, Now =< 21*60+15, X is 21*60+15 - Now.
+next_ferry(_Day_of_week,Now,X) :- Now > 21*60+15, Now =< 21*60+35, X is 21*60+35 - Now.
+next_ferry(_Day_of_week,Now,X) :- Now > 21*60+35, Now =< 21*60+55, X is 21*60+55 - Now.
+next_ferry(_Day_of_week,Now,X) :- Now > 21*60+55, Now =< 22*60+25, X is 22*60+25 - Now.
+next_ferry(_Day_of_week,Now,X) :- Now > 22*60+25, Now =< 22*60+55, X is 22*60+55 - Now.
+next_ferry(_Day_of_week,Now,X) :- Now > 22*60+55, Now =< 23*60+25, X is 23*60+25 - Now.
+next_ferry(_Day_of_week,Now,X) :- Now > 23*60+25, Now =< 23*60+55, X is 23*60+55 - Now.
+
+
+is_weekend(6).
+is_weekend(7).

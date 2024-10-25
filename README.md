@@ -1,3 +1,7 @@
+This is standard Erlog. I added an example, ferryclock. Prerequisite is Ghostscript and gmake.
+gmake and then gmake start
+ferryclock:start(self()).
+
 
 [![Build Status](https://travis-ci.org/zkessin/erlog.svg?branch=master)](https://travis-ci.org/zkessin/erlog)
 

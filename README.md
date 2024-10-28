@@ -1,6 +1,7 @@
 This is standard Erlog. I added an example, ferryclock. Prerequisite is Ghostscript and gmake.
-gmake and then gmake start
-ferryclock:start(self()).
+<pre>gmake
+gmake start
+ferryclock:start(self()).</pre>
 
 ## Erlog - Prolog for an Erlang Application
 

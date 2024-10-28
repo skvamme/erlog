@@ -2,9 +2,6 @@ This is standard Erlog. I added an example, ferryclock. Prerequisite is Ghostscr
 gmake and then gmake start
 ferryclock:start(self()).
 
-
-[![Build Status](https://travis-ci.org/zkessin/erlog.svg?branch=master)](https://travis-ci.org/zkessin/erlog)
-
 ## Erlog - Prolog for an Erlang Application
 
 Erlog is a Prolog interpreter implemented in Erlang and integrated
